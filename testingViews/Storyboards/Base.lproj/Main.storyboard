@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--To Do-->
+        <!--To Do List-->
         <scene sceneID="ki0-lm-4ko">
             <objects>
                 <tableViewController id="Mbz-6v-pZO" customClass="TaskTableViewController" customModule="testingViews" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,8 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="To Do" id="vei-Qa-CPx">
+                    <navigationItem key="navigationItem" title="To Do List" id="vei-Qa-CPx">
+                        <barButtonItem key="backBarButtonItem" title=" " id="gOw-LX-n7X"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wjb-Lf-LPU">
                             <connections>
                                 <segue destination="f3n-Rb-yB1" kind="show" id="zNF-4i-A3h"/>
@@ -42,6 +43,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addNavBarButton" destination="wjb-Lf-LPU" id="4hd-9w-fya"/>
+                        <outlet property="navigationBar" destination="vei-Qa-CPx" id="cnD-uS-6Wg"/>
                         <segue destination="kr0-OZ-X6u" kind="show" identifier="openEdit" id="Igt-bc-cF7"/>
                     </connections>
                 </tableViewController>
@@ -59,9 +61,7 @@
                         <viewLayoutGuide key="safeArea" id="Auk-qF-qdA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a new Task" id="azd-Oe-SJ3">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="XUQ-si-xSq"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add a new Task" id="azd-Oe-SJ3"/>
                     <connections>
                         <outlet property="taskView" destination="aVp-ti-xp9" id="diE-IY-Rth"/>
                     </connections>
@@ -75,8 +75,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZJ0-uK-yUb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qYB-6Y-9Y4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="qYB-6Y-9Y4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

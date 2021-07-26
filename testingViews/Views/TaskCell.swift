@@ -22,10 +22,11 @@ class TaskCell: UITableViewCell {
     createDesign()
     
     }
-  
+  // MARK: - DESIGN
   func createDesign()
-  {self.contentView.backgroundColor = .systemOrange
-  roundCorners([.topLeft, .bottomLeft], radius: self.bounds.height / 2)
+  {self.contentView.backgroundColor = UIColor(red: 238/255, green: 224/255, blue: 203/255, alpha: 1)
+  roundCorners([.topLeft, .bottomLeft, .bottomRight, .topRight], radius: self.bounds.height / 2)
+ 
   }
   
   func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {

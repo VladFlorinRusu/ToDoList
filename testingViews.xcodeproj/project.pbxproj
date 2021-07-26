@@ -70,15 +70,15 @@
 		8E1AC18E26A55B2700E1A04B /* testingViews */ = {
 			isa = PBXGroup;
 			children = (
+				8E1AC1A926A5925300E1A04B /* Controllers */,
 				8E1AC1AF26A598E800E1A04B /* Views */,
+				8E1AC1AA26A5928900E1A04B /* Storyboards */,
 				8E1AC1AC26A596E300E1A04B /* Model */,
 				8E1AC19826A55B2B00E1A04B /* Assets.xcassets */,
 				8E1AC18F26A55B2700E1A04B /* AppDelegate.swift */,
 				8E1AC19126A55B2700E1A04B /* SceneDelegate.swift */,
 				8E1AC19D26A55B2B00E1A04B /* Info.plist */,
 				8E1AC19A26A55B2B00E1A04B /* LaunchScreen.storyboard */,
-				8E1AC1AA26A5928900E1A04B /* Storyboards */,
-				8E1AC1A926A5925300E1A04B /* Controllers */,
 			);
 			path = testingViews;
 			sourceTree = "<group>";

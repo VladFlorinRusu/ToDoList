@@ -20,6 +20,11 @@ class AddTaskViewController: UIViewController {
   
   
   
+  
+  
+  
+  //MARK: - ACTIONS
+  
   @objc func addTask ()
   {// nu ar trebui sa dea nicioadata fail, butonul nu apare pana nu se tasteaza ceva...
     
@@ -37,7 +42,10 @@ class AddTaskViewController: UIViewController {
     {print("no text added")}
   }
 
-
+  
+  
+  
+//MARK: -PRIVATE FUNCTIONS
 
   private func syncTableData()
   {//obtin referinta la taskTableVC si apelez reload data pentru a sincroniza 

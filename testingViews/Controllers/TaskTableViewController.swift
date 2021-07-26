@@ -13,7 +13,12 @@ class TaskTableViewController: UITableViewController {
   let myCustomCell = "TaskCell"
   var taskManager = TaskManager.taskManagerInstance
   var addButton = UIButton()
+  let greenColor = UIColor(red: 131/255, green: 151/255, blue: 136/255, alpha: 1)
+  let buttonColor = UIColor(red: 238/255, green: 224/255, blue: 203/255, alpha: 1)
   
+  
+  
+  @IBOutlet weak var navigationBar: UINavigationItem!
   
   @IBOutlet weak var addNavBarButton: UIBarButtonItem!
   
@@ -23,7 +28,8 @@ class TaskTableViewController: UITableViewController {
       taskManager.addNewActivity(activity: "Do the shopping")
       taskManager.addNewActivity(activity: "Go walk the dog")
       registerCells()
-      tableView.backgroundColor = .black
+      
+      //tableView.backgroundColor = UIColor(red: 131/255, green: 151/255, blue: 136/255, alpha: 1)
       
     }
   
@@ -54,6 +60,10 @@ class TaskTableViewController: UITableViewController {
     self.tableView.rowHeight = 44
     tableView.backgroundView?.isHidden = true
     addNavBarButton.isEnabled = true
+    tableView.backgroundView = UIView()
+    tableView.backgroundView?.center = tableView.center
+    tableView.backgroundView?.backgroundColor = greenColor
+    navigationController?.navigationBar.barTintColor = greenColor
   }
   
   
@@ -62,17 +72,20 @@ class TaskTableViewController: UITableViewController {
   func createAddButton(){
     addNavBarButton.isEnabled = false
     
-    tableView.backgroundView = UIView()
-    tableView.backgroundView?.center = tableView.center
-    tableView.backgroundView?.backgroundColor = UIColor .white
+    
     tableView.separatorColor = UIColor .clear
 
-    addButton.backgroundColor = .systemBlue
+    addButton.backgroundColor =  buttonColor
     addButton.center = tableView.center
     addButton.setTitle("Add Task", for: .normal)
     addButton.addTarget(self, action: #selector(addNewTask), for: UIControl.Event.touchUpInside )
-    tableView.backgroundView = addButton
-    tableView.backgroundView?.frame = CGRect(x: 0, y: 400, width: 200, height: 50)
+    addButton.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+    addButton.center = tableView.center
+    addButton.layer.borderWidth = 1
+    addButton.layer.borderColor = CGColor(red: 0, green: 0, blue: 0 , alpha: 1.0)
+    addButton.layer.cornerRadius = addButton.layer.frame.height / 2
+    
+    tableView.backgroundView?.addSubview(addButton)
     
     
   }
@@ -142,6 +155,7 @@ class TaskTableViewController: UITableViewController {
             // Delete the row from the data source
           taskManager.deleteActivity(index: indexPath.row)
           tableView.deleteRows(at: [indexPath], with: .fade)
+          tableView.reloadData()
           if taskManager.dataSource.count == 0
           {createAddButton()}
         }
