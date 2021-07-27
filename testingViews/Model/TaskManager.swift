@@ -8,53 +8,56 @@
 import Foundation
 
 
-protocol TaskProtocol {
+protocol TaskManager {
     typealias TaskData = (activity: String, completed: Bool)
     
-    func selectedTask (_ index: Int) -> TaskData
-    
-    func numberOfTasks() -> Int
+    func taskAt(at index: Int) -> Task
     
     func addNewActivity(activity act: String)
     
-    func deleteActivity (index i: Int)
+    func deleteActivity(at index: Int)
     
     func changeTask(index: Int, newTask: String)
     
     func toggleActivity (index i: Int)
 }
 
+//de facut o structura sau o clasa in loc de tupla
 
+class Task {
+    var activity: String
+    var completed = false
+    
+    init (activity: String) {
+        self.activity = activity
+    }
+}
 
-class TaskManager: TaskProtocol{
-    typealias TaskData = (activity: String, completed: Bool)
-    private var dataSource: [TaskData]
-    static let taskManagerInstance = TaskManager()
-
-
+class TaskManagerImpl: TaskManager {
+    private var dataSource: [Task]
+    static let taskManagerInstance = TaskManagerImpl()
+    var numberOfTasks: Int {
+        return dataSource.count
+    }
 
     private init(){
         self.dataSource = []
     }
     
-    func selectedTask (_ index: Int) -> TaskData {
+    func taskAt(at index: Int) -> Task {
         return dataSource[index]
     }
     
-    func numberOfTasks() -> Int {
-        return dataSource.count
-    }
-    
     func addNewActivity(activity act: String) {
-        dataSource.append((activity: act, completed: false))
+        dataSource.append(Task(activity: act))
     }
 
-    func deleteActivity (index i: Int){
-        dataSource.remove(at: i)
+    func deleteActivity (at index: Int){
+        dataSource.remove(at: index)
     }
     
     func changeTask(index: Int, newTask: String){
-        dataSource[index].0 = newTask
+        dataSource[index].activity = newTask
     }
     
     func toggleActivity (index i: Int) {

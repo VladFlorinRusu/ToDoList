@@ -17,7 +17,7 @@ class TaskTableViewController: UITableViewController {
   
 //MARK: - Properties
     let myCustomCell = "TaskCell"
-    var taskManager = TaskManager.taskManagerInstance
+    var taskManager = TaskManagerImpl.taskManagerInstance
     var addButton = UIButton()
     let colors = ElementColor()
 
@@ -39,7 +39,7 @@ class TaskTableViewController: UITableViewController {
   
     override func viewWillAppear(_ animated: Bool) {
         self.title = "TO DO"
-        if taskManager.numberOfTasks() > 0 {
+        if taskManager.numberOfTasks > 0 {
             configureTable()
         }
         else {
@@ -61,7 +61,7 @@ class TaskTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskManager.numberOfTasks()
+        return taskManager.numberOfTasks
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,13 +74,12 @@ class TaskTableViewController: UITableViewController {
         return cell!
     }
   
-  //MARK: - Override -> UITableViewDelegate
+//MARK: - Override -> UITableViewDelegate
   
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedTask = taskManager.selectedTask(indexPath.row).0
+        let selectedTask = taskManager.taskAt(at: indexPath.row).activity
         if let editTaskVC = storyboard?.instantiateViewController(identifier: "AddEditTaskViewController") as? AddEditTaskViewController{
             print("edit")
-            //editTaskVC.isAdd = false
             editTaskVC.selectedTask = selectedTask
             editTaskVC.indexTask = indexPath.row
             navigationController?.pushViewController(editTaskVC, animated: true)
@@ -94,10 +93,10 @@ class TaskTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             if editingStyle == .delete {
             // Delete the row from the data source
-                taskManager.deleteActivity(index: indexPath.row)
+                taskManager.deleteActivity(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.reloadData()
-                if taskManager.numberOfTasks() == 0 {
+                if taskManager.numberOfTasks == 0 {
                     createAddButton()
                 }
             }
@@ -152,8 +151,8 @@ class TaskTableViewController: UITableViewController {
     }
   
     private func configureCell(cell: TaskCell?, index: Int){
-        cell?.taskLabel?.text = taskManager.selectedTask(index).0
-        if taskManager.selectedTask(index).1 == false {
+        cell?.taskLabel?.text = taskManager.taskAt(at: index).activity
+        if taskManager.taskAt(at: index).completed == false {
             cell?.statusImage?.image = UIImage(systemName: "circle")
         }
         else {

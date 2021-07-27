@@ -8,40 +8,37 @@
 import UIKit
 
 class AddEditTaskViewController: UIViewController {
-  
-
     @IBOutlet var taskView: TaskView!
     var selectedTask: String = ""
     var indexTask: Int = 0
-  
-  // MARK: - LIFECYCLE
+    
+    
+// MARK: - Lifecycle
   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         configureView()
     }
   
-  //MARK: - ACTIONS
+//MARK: - Actions
   
-    @objc func addTask ()
-    {// nu ar trebui sa dea nicioadata fail, butonul nu apare pana nu se tasteaza ceva...
-
+    @objc func addTask() {
+        // nu ar trebui sa dea nicioadata fail, butonul nu apare pana nu se tasteaza ceva...
         if let newTask = taskView.textField.text {
-            TaskManager.taskManagerInstance.addNewActivity(activity: newTask)
+            TaskManagerImpl.taskManagerInstance.addNewActivity(activity: newTask)
             syncTableData()
             self.navigationController?.popViewController(animated: true)
-           
-        }
-        else {
+        } else {
             print("no text added")
         }
     }
   
     @objc func editTask() {
-        if let changedTask = taskView.textField.text{
-            TaskManager.taskManagerInstance.changeTask(index: indexTask, newTask: changedTask)
+        if let changedTask = taskView.textField.text {
+            TaskManagerImpl.taskManagerInstance.changeTask(index: indexTask, newTask: changedTask)
             syncTableData()
         }
         else {
@@ -50,9 +47,10 @@ class AddEditTaskViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
   
-//MARK: - PRIVATE FUNCTIONS
+//MARK: - Private Functions
 
     private func syncTableData() {//obtin referinta la taskTableVC si apelez reload data pentru a sincroniza
+        //de folosit delegates in loc de smecheria de jos
         let i = navigationController?.viewControllers.firstIndex(of: self)
         let previousVC = navigationController?.viewControllers[i! - 1] as? TaskTableViewController
         previousVC?.tableView.reloadData()
@@ -60,7 +58,7 @@ class AddEditTaskViewController: UIViewController {
 
     private func configureView() {
         if selectedTask == "" {
-            self.title = "Add a new Task"
+            title = "Add a new Task"
             taskView.textField.placeholder = "To Do ..."
             taskView.button.setTitle("Add Task", for: .normal)
             taskView.button.addTarget(self, action: #selector(addTask), for: .touchUpInside)
