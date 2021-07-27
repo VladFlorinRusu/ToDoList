@@ -44,6 +44,12 @@ class TaskManagerImpl: TaskManager {
         self.dataSource = []
     }
     
+    func showActivities() {
+        for i in dataSource {
+            print(i.activity)
+        }
+    }
+    
     func taskAt(at index: Int) -> Task {
         return dataSource[index]
     }
