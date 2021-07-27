@@ -14,12 +14,12 @@
 		8E1AC19C26A55B2B00E1A04B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1AC19A26A55B2B00E1A04B /* LaunchScreen.storyboard */; };
 		8E1AC1A826A58D8700E1A04B /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1A726A58D8700E1A04B /* TaskTableViewController.swift */; };
 		8E1AC1AE26A5970300E1A04B /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1AD26A5970300E1A04B /* TaskManager.swift */; };
-		8E1AC1B726A5B13400E1A04B /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1B626A5B13400E1A04B /* AddTaskViewController.swift */; };
+		8E1AC1B726A5B13400E1A04B /* AddEditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1B626A5B13400E1A04B /* AddEditTaskViewController.swift */; };
 		8E1AC1BD26A6AE1000E1A04B /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1BC26A6AE1000E1A04B /* TaskView.swift */; };
 		8E1AC1BF26A6AE2A00E1A04B /* TaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E1AC1BE26A6AE2A00E1A04B /* TaskView.xib */; };
-		8E1AC1C126A6D9EC00E1A04B /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1C026A6D9EC00E1A04B /* EditTaskViewController.swift */; };
 		8E1AC1C826A70C0300E1A04B /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1C626A70C0300E1A04B /* TaskCell.swift */; };
 		8E1AC1C926A70C0300E1A04B /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E1AC1C726A70C0300E1A04B /* TaskCell.xib */; };
+		8E1AC1CF26AE937300E1A04B /* CustomTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AC1CE26AE937300E1A04B /* CustomTapGesture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,12 @@
 		8E1AC19D26A55B2B00E1A04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E1AC1A726A58D8700E1A04B /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		8E1AC1AD26A5970300E1A04B /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
-		8E1AC1B626A5B13400E1A04B /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		8E1AC1B626A5B13400E1A04B /* AddEditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTaskViewController.swift; sourceTree = "<group>"; };
 		8E1AC1BC26A6AE1000E1A04B /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		8E1AC1BE26A6AE2A00E1A04B /* TaskView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskView.xib; sourceTree = "<group>"; };
-		8E1AC1C026A6D9EC00E1A04B /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		8E1AC1C626A70C0300E1A04B /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		8E1AC1C726A70C0300E1A04B /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		8E1AC1CE26AE937300E1A04B /* CustomTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTapGesture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1AC1A726A58D8700E1A04B /* TaskTableViewController.swift */,
-				8E1AC1B626A5B13400E1A04B /* AddTaskViewController.swift */,
-				8E1AC1C026A6D9EC00E1A04B /* EditTaskViewController.swift */,
+				8E1AC1B626A5B13400E1A04B /* AddEditTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8E1AC1AD26A5970300E1A04B /* TaskManager.swift */,
+				8E1AC1CE26AE937300E1A04B /* CustomTapGesture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,12 +194,12 @@
 			files = (
 				8E1AC1A826A58D8700E1A04B /* TaskTableViewController.swift in Sources */,
 				8E1AC1BD26A6AE1000E1A04B /* TaskView.swift in Sources */,
-				8E1AC1B726A5B13400E1A04B /* AddTaskViewController.swift in Sources */,
+				8E1AC1B726A5B13400E1A04B /* AddEditTaskViewController.swift in Sources */,
+				8E1AC1CF26AE937300E1A04B /* CustomTapGesture.swift in Sources */,
 				8E1AC19026A55B2700E1A04B /* AppDelegate.swift in Sources */,
 				8E1AC19226A55B2700E1A04B /* SceneDelegate.swift in Sources */,
 				8E1AC1AE26A5970300E1A04B /* TaskManager.swift in Sources */,
 				8E1AC1C826A70C0300E1A04B /* TaskCell.swift in Sources */,
-				8E1AC1C126A6D9EC00E1A04B /* EditTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

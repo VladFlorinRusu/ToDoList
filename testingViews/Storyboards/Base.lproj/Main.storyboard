@@ -44,7 +44,6 @@
                     <connections>
                         <outlet property="addNavBarButton" destination="wjb-Lf-LPU" id="4hd-9w-fya"/>
                         <outlet property="navigationBar" destination="vei-Qa-CPx" id="cnD-uS-6Wg"/>
-                        <segue destination="kr0-OZ-X6u" kind="show" identifier="openEdit" id="Igt-bc-cF7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzU-lQ-ztV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -54,7 +53,7 @@
         <!--Add a new Task-->
         <scene sceneID="UfH-ol-Wg1">
             <objects>
-                <viewController storyboardIdentifier="AddTaskViewController" id="f3n-Rb-yB1" customClass="AddTaskViewController" customModule="testingViews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEditTaskViewController" id="f3n-Rb-yB1" customClass="AddEditTaskViewController" customModule="testingViews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aVp-ti-xp9" customClass="TaskView" customModule="testingViews" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,25 +86,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAl-pS-5CW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-671.01449275362324" y="-35.491071428571423"/>
-        </scene>
-        <!--Edit-->
-        <scene sceneID="AvU-d2-Peq">
-            <objects>
-                <viewController storyboardIdentifier="EditTaskViewController" id="kr0-OZ-X6u" customClass="EditTaskViewController" customModule="testingViews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rGG-IS-ldv" customClass="TaskView" customModule="testingViews" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mv8-FM-okT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Edit" id="UAm-fH-hch"/>
-                    <connections>
-                        <outlet property="taskView" destination="rGG-IS-ldv" id="rWS-4H-CLb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mg0-EM-G7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="239" y="980"/>
         </scene>
     </scenes>
     <resources>
