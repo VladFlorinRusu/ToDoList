@@ -34,11 +34,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="To Do List" id="vei-Qa-CPx">
                         <barButtonItem key="backBarButtonItem" title=" " id="gOw-LX-n7X"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wjb-Lf-LPU">
-                            <connections>
-                                <segue destination="f3n-Rb-yB1" kind="show" id="zNF-4i-A3h"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wjb-Lf-LPU"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
