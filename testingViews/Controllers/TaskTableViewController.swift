@@ -33,7 +33,7 @@ class TaskTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.title = "TO DO LIST"
+        self.title = "TO DO"
         if taskManager.numberOfTasks > 0 {
             configureTable()
         } else {
