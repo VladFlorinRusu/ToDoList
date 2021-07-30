@@ -33,7 +33,7 @@ class AddEditTaskViewController: UIViewController {
             TaskManagerImpl.taskManagerInstance.showActivities()
 
         } else {
-            print("no text added")
+            print("no text added1")
         }
         self.navigationController?.popViewController(animated: true)
     }
